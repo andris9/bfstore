@@ -1,7 +1,7 @@
 var fs = require("fs"),
     fetch = require("fetch"),
     config = require("../config/config.json"),
-    mapping = require("../config/mapping.json");
+    mapping = require("../config/mappings.json");
 
 console.log("Start install")
 
@@ -14,7 +14,7 @@ createIndex(function(err){
             if(err){
                 console.log("Mapping failed :S");
             }else{
-                console.log("Mapping created");
+                console.log("Mapping created/updated");
             }
         });
     }

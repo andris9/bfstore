@@ -11,8 +11,5 @@
     "dependencies": {
         "redis": "*",
         "fetch": "*"
-    },
-    "scripts":{
-        "mappings": "node ./scripts/mappings.js"
     }
 }
