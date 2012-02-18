@@ -24,7 +24,7 @@ redis.on("message", function(channel, message){
             if(err){
                 console.log("Save failed: "+(err.message || err));
             }else{
-                console.log("Saved as " + sha256(article.url));
+                console.log("Saved as " + md5(article.url));
             }
         })
         
@@ -41,8 +41,8 @@ redis.on("message", function(channel, message){
 });
 
 
-function sendArticle(article){
-    var url = "http://"+config.searchServer+":9200/"+config.database+"/article/"+sha256(article.url);
+function sendArticle(article, callback){
+    var url = "http://"+config.searchServer+":9200/"+config.database+"/article/"+md5(article.url);
     fetchUrl(
         url,
         {
@@ -60,6 +60,6 @@ function sendArticle(article){
         });
 }
 
-function sha256(str){
-    return crypto.createHash("sha256").update(str).digest("hex");
+function md5(str){
+    return crypto.createHash("md5").update(str).digest("hex");
 }
