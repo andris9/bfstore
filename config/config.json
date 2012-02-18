@@ -1,0 +1,4 @@
+{
+    "searchServer": "elastic.node.ee",
+    "database": "articles"
+}

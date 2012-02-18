@@ -1,10 +1,10 @@
 var fs = require("fs"),
     fetch = require("fetch"),
-    config = JSON.parse(fs.readFileSync(__dirname + "/config.json", "utf-8")),
-    mapping = JSON.parse(fs.readFileSync(__dirname + "/mapping.json", "utf-8"));
+    config = require("../config/config.json"),
+    mapping = require("../config/mapping.json");
 
+console.log("Start install")
 
-console.log("start")
 createIndex(function(err){
     if(err){
         console.log("Index failed :S");
@@ -19,7 +19,6 @@ createIndex(function(err){
         });
     }
 });
-
 
 function createIndex(callback){
     var url = "http://"+config.searchServer+":9200/"+config.database+"/";

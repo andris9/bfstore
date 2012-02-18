@@ -9,6 +9,10 @@
         }
     ],
     "dependencies": {
-        "redis": "*"
+        "redis": "*",
+        "fetch": "*"
+    },
+    "scripts":{
+        "mappings": "node ./scripts/mappings.js"
     }
 }
