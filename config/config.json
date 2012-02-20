@@ -1,4 +1,5 @@
 {
     "searchServer": "elastic.node.ee",
-    "database": "articles"
+    "database": "articles",
+    "gearmanHost": "pangalink.net"
 }
